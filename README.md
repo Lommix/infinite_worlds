@@ -2,15 +2,15 @@
 
 Godot addon for generating infinite growing terrain using Wave-Function-Collapse algorithm.
 
-![editor](docs/demo.webm?raw=true)
+[editor](docs/demo.webm?raw=true)
 
 How cool would it be. Draw some tiles, define some simple rules and an infinite world awaits you!
 
 Well this addon makes it possible. It uses the Wave-Function-Collapse algorithm to generate the world.
 
-All you have to do, is draw some patterns on a reference tilemap and use the inbuild editor tool to generate a wave function collapse ruleset from that.
+All you have to do, is draw some patterns on a reference tilemap and use the in-build editor tool to generate a wave function collapse ruleset from that.
 
-Then plug it into a special tilemap node and you are good to go.
+Then plug it into a special tilemap node, and you are good to go.
 
 ![editor](docs/editor.jpeg)
 
