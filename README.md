@@ -2,7 +2,7 @@
 
 Godot addon for generating infinite growing terrain using Wave-Function-Collapse algorithm.
 
-![editor](docs/demo.webm)
+![editor](docs/demo.webm?raw=true)
 
 How cool would it be. Draw some tiles, define some simple rules and an infinite world awaits you!
 
