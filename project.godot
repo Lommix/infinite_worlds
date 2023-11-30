@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Lommix Wfc"
 run/main_scene="res://example/main.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 
 [autoload]
 

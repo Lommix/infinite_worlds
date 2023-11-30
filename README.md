@@ -46,12 +46,13 @@ The rest of this repository is just a demo project, which you can use to play ar
 
 ## Extend
 
--   This addons adds some signals, you can subscribe to. For each pattern that is collapsed, a `pattern_collapsed` signal is emitted. You can use this to add some logic to your game. For example, spawn buildings, trees, or enemies. Check out the example project for more details.
+-   This addons adds some signals, you can subscribe to. For each pattern that is collapsed/drawn, a `on_cell_draw` signal is emitted. You can use this to add some logic to your game. For example, spawn buildings, trees, or enemies. Check out the example project for more details.
 
 ```gdscript
 ## /addons/infinite_worlds/singletons/wfc_map_container.gd
 
 ## called on contradiction, a cell has 0 possible outcomes [async]
+## never used this, might be useful to recalculate some broken chunks in complex rulesets.
 signal on_contradiction(cell: WfcCell)
 
 ## called when drawing to tilemap [mainthread]
