@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://x6dlb35sjrdw"]
+
+[ext_resource type="TileSet" uid="uid://b3hngxhf5khj" path="res://example/tileset.tres" id="1_xlsi0"]
+[ext_resource type="Script" path="res://addons/lommix_infinite_worlds/nodes/wfc_tile_map.gd" id="2_dedbv"]
+[ext_resource type="Resource" uid="uid://dv7m7gt5bo387" path="res://example/wfc_tiles.tres" id="3_5mihr"]
+[ext_resource type="Script" path="res://example/wfc_event_watcher.gd" id="4_mmtdy"]
+[ext_resource type="Script" path="res://example/walker.gd" id="6_qrq7f"]
+
+[node name="main" type="Node2D"]
+
+[node name="WfcTileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_xlsi0")
+format = 2
+script = ExtResource("2_dedbv")
+wfc_tile_set = ExtResource("3_5mihr")
+loading_radius = 7
+follow_path = NodePath("../walker")
+
+[node name="wfc_event_watcher" type="Node2D" parent="."]
+script = ExtResource("4_mmtdy")
+
+[node name="trees" type="Node2D" parent="wfc_event_watcher"]
+z_index = 6
+
+[node name="houses" type="TileMap" parent="wfc_event_watcher"]
+tile_set = ExtResource("1_xlsi0")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131072, 1245188, 5, -65536, 393220, 4, -131071, 1376260, 5, -65535, 393220, 4)
+
+[node name="walker" type="Node2D" parent="."]
+script = ExtResource("6_qrq7f")
+speed = 2000.0
+
+[node name="Camera2D" type="Camera2D" parent="walker"]
+
+[node name="ColorRect" type="ColorRect" parent="walker"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.317647, 0, 0.317647, 1)

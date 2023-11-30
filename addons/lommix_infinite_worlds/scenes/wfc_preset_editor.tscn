@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://co4e23ttlb357"]
+
+[ext_resource type="Script" path="res://addons/lommix_infinite_worlds/scenes/wfc_preset_editor.gd" id="1_6ss66"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n7rnf"]
+line_spacing = 20.0
+font_size = 24
+
+[node name="wfc_preset_editor" type="CenterContainer"]
+offset_right = 1040.0
+offset_bottom = 836.0
+script = ExtResource("1_6ss66")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 1040.0
+offset_bottom = 894.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+offset_right = 1040.0
+offset_bottom = 54.0
+text = "Wfc Preset Editor"
+label_settings = SubResource("LabelSettings_n7rnf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+offset_top = 58.0
+offset_right = 1040.0
+offset_bottom = 894.0
+
+[node name="draw" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+offset_right = 836.0
+offset_bottom = 836.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/draw"]
+offset_right = 836.0
+offset_bottom = 836.0
+
+[node name="draw_surface" type="GridContainer" parent="VBoxContainer/HBoxContainer/draw/CenterContainer"]
+unique_name_in_owner = true
+offset_right = 836.0
+offset_bottom = 836.0
+columns = 10
+
+[node name="actions" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+offset_left = 840.0
+offset_right = 1040.0
+offset_bottom = 836.0
+size_flags_horizontal = 3
+
+[node name="tile_set_container" type="PanelContainer" parent="VBoxContainer/HBoxContainer/actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+offset_right = 200.0
+offset_bottom = 31.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/actions"]
+offset_top = 35.0
+offset_right = 200.0
+offset_bottom = 70.0
+
+[node name="tile_select" type="GridContainer" parent="VBoxContainer/HBoxContainer/actions/VBoxContainer2"]
+unique_name_in_owner = true
+offset_right = 200.0
+columns = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/actions/VBoxContainer2"]
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 35.0
+
+[node name="clear" type="Button" parent="VBoxContainer/HBoxContainer/actions/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+offset_right = 120.0
+offset_bottom = 31.0
+text = "clear selection"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/actions"]
+offset_top = 770.0
+offset_right = 200.0
+offset_bottom = 836.0
+size_flags_vertical = 10
+
+[node name="save_button" type="Button" parent="VBoxContainer/HBoxContainer/actions/VBoxContainer"]
+unique_name_in_owner = true
+offset_right = 200.0
+offset_bottom = 31.0
+text = "Create Resource
+"
+
+[node name="save_container" type="PanelContainer" parent="VBoxContainer/HBoxContainer/actions/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+offset_top = 35.0
+offset_right = 200.0
+offset_bottom = 66.0

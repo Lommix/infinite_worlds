@@ -1,0 +1,395 @@
+[gd_scene load_steps=8 format=3 uid="uid://c08wqfmporgf7"]
+
+[ext_resource type="Script" path="res://addons/lommix_infinite_worlds/scenes/wfc_slicer_tab.gd" id="1_t16jv"]
+[ext_resource type="Script" path="res://addons/lommix_infinite_worlds/scenes/tile_set_editor.gd" id="2_3ttdf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ustq7"]
+bg_color = Color(0.784314, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t6un"]
+bg_color = Color(0, 0.784314, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efcan"]
+bg_color = Color(0, 0, 0.784314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1m3y"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.952941, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkgdg"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[node name="wfc_slicer_tab" type="VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 335.0
+grow_horizontal = 2
+script = ExtResource("1_t16jv")
+
+[node name="control" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 89.0
+
+[node name="tilemap_actions" type="HBoxContainer" parent="control"]
+layout_mode = 2
+offset_right = 835.0
+offset_bottom = 89.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="control/tilemap_actions"]
+layout_mode = 2
+offset_right = 76.0
+offset_bottom = 89.0
+
+[node name="label_pattern_x" type="Label" parent="control/tilemap_actions/VBoxContainer"]
+layout_mode = 2
+offset_right = 76.0
+offset_bottom = 26.0
+text = "pattern x:"
+
+[node name="label_pattern_y" type="Label" parent="control/tilemap_actions/VBoxContainer"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 76.0
+offset_bottom = 56.0
+text = "pattern y:"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="control/tilemap_actions"]
+layout_mode = 2
+offset_left = 80.0
+offset_right = 163.0
+offset_bottom = 89.0
+
+[node name="pattern_x" type="SpinBox" parent="control/tilemap_actions/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 83.0
+offset_bottom = 31.0
+min_value = 1.0
+value = 3.0
+
+[node name="pattern_y" type="SpinBox" parent="control/tilemap_actions/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 35.0
+offset_right = 83.0
+offset_bottom = 66.0
+min_value = 1.0
+value = 3.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="control/tilemap_actions"]
+layout_mode = 2
+offset_left = 167.0
+offset_right = 234.0
+offset_bottom = 89.0
+
+[node name="region_label_x" type="Label" parent="control/tilemap_actions/VBoxContainer3"]
+layout_mode = 2
+offset_right = 67.0
+offset_bottom = 26.0
+text = "region x:"
+
+[node name="region_label_y" type="Label" parent="control/tilemap_actions/VBoxContainer3"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 67.0
+offset_bottom = 56.0
+text = "region y:"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="control/tilemap_actions"]
+layout_mode = 2
+offset_left = 238.0
+offset_right = 321.0
+offset_bottom = 89.0
+
+[node name="region_x" type="SpinBox" parent="control/tilemap_actions/VBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 83.0
+offset_bottom = 31.0
+min_value = 1.0
+value = 5.0
+
+[node name="region_y" type="SpinBox" parent="control/tilemap_actions/VBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 35.0
+offset_right = 83.0
+offset_bottom = 66.0
+min_value = 1.0
+value = 5.0
+
+[node name="slice_btn" type="Button" parent="control/tilemap_actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+offset_left = 325.0
+offset_right = 425.0
+offset_bottom = 89.0
+text = "slice"
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="control/tilemap_actions"]
+layout_mode = 2
+offset_left = 429.0
+offset_right = 579.0
+offset_bottom = 89.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="control/tilemap_actions/VBoxContainer5"]
+layout_mode = 2
+offset_right = 150.0
+offset_bottom = 31.0
+
+[node name="grid_show" type="Button" parent="control/tilemap_actions/VBoxContainer5/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+offset_right = 150.0
+offset_bottom = 31.0
+text = "Toggle Grid"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="control/tilemap_actions/VBoxContainer5"]
+layout_mode = 2
+offset_top = 35.0
+offset_right = 150.0
+offset_bottom = 66.0
+
+[node name="Label" type="Label" parent="control/tilemap_actions/VBoxContainer5/HBoxContainer2"]
+layout_mode = 2
+offset_top = 2.0
+offset_right = 53.0
+offset_bottom = 28.0
+text = "border"
+
+[node name="border" type="SpinBox" parent="control/tilemap_actions/VBoxContainer5/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 57.0
+offset_right = 140.0
+offset_bottom = 31.0
+min_value = 1.0
+value = 3.0
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="control/tilemap_actions"]
+layout_mode = 2
+offset_left = 583.0
+offset_right = 835.0
+offset_bottom = 89.0
+
+[node name="Label" type="Label" parent="control/tilemap_actions/VBoxContainer6"]
+layout_mode = 2
+offset_right = 252.0
+offset_bottom = 26.0
+text = "Color Groups"
+
+[node name="colors" type="HBoxContainer" parent="control/tilemap_actions/VBoxContainer6"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 252.0
+offset_bottom = 89.0
+
+[node name="R" type="Button" parent="control/tilemap_actions/VBoxContainer6/colors"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+offset_right = 60.0
+offset_bottom = 59.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_ustq7")
+text = "R"
+
+[node name="G" type="Button" parent="control/tilemap_actions/VBoxContainer6/colors"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+offset_left = 64.0
+offset_right = 124.0
+offset_bottom = 59.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_8t6un")
+text = "G"
+
+[node name="B" type="Button" parent="control/tilemap_actions/VBoxContainer6/colors"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+offset_left = 128.0
+offset_right = 188.0
+offset_bottom = 59.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_efcan")
+text = "B"
+
+[node name="W" type="Button" parent="control/tilemap_actions/VBoxContainer6/colors"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+offset_left = 192.0
+offset_right = 252.0
+offset_bottom = 59.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_s1m3y")
+text = "X"
+
+[node name="PanelContainer" type="PanelContainer" parent="control"]
+layout_mode = 2
+offset_left = 839.0
+offset_right = 906.0
+offset_bottom = 89.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nkgdg")
+
+[node name="render" type="MenuButton" parent="control/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 67.0
+offset_bottom = 89.0
+text = "Render
+options"
+switch_on_hover = true
+
+[node name="Actions" type="HBoxContainer" parent="control"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 910.0
+offset_right = 1152.0
+offset_bottom = 89.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="tile_set_editor" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_top = 93.0
+offset_right = 1152.0
+offset_bottom = 335.0
+size_flags_vertical = 3
+script = ExtResource("2_3ttdf")
+
+[node name="PanelContainer" type="PanelContainer" parent="tile_set_editor"]
+layout_mode = 2
+offset_right = 150.0
+offset_bottom = 242.0
+
+[node name="socket_label" type="Label" parent="tile_set_editor/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 150.0
+offset_bottom = 115.0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "hash:
+up:
+down:
+left:
+right:"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="tile_set_editor/PanelContainer"]
+layout_mode = 2
+offset_right = 150.0
+offset_bottom = 242.0
+
+[node name="CenterContainer" type="CenterContainer" parent="tile_set_editor/PanelContainer/VBoxContainer"]
+layout_mode = 2
+offset_right = 150.0
+offset_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="tile_set_editor/PanelContainer/VBoxContainer"]
+layout_mode = 2
+offset_top = 123.0
+offset_right = 150.0
+offset_bottom = 242.0
+size_flags_vertical = 3
+alignment = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="tile_set_editor/PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+offset_right = 63.0
+offset_bottom = 119.0
+alignment = 2
+
+[node name="n" type="Label" parent="tile_set_editor/PanelContainer/VBoxContainer/HBoxContainer3/HBoxContainer"]
+layout_mode = 2
+offset_top = 63.0
+offset_right = 63.0
+offset_bottom = 89.0
+text = "Name: "
+
+[node name="w" type="Label" parent="tile_set_editor/PanelContainer/VBoxContainer/HBoxContainer3/HBoxContainer"]
+layout_mode = 2
+offset_top = 93.0
+offset_right = 63.0
+offset_bottom = 119.0
+text = "Weight: "
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="tile_set_editor/PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+offset_left = 67.0
+offset_right = 150.0
+offset_bottom = 119.0
+alignment = 2
+
+[node name="name_input" type="TextEdit" parent="tile_set_editor/PanelContainer/VBoxContainer/HBoxContainer3/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+offset_top = 50.0
+offset_right = 83.0
+offset_bottom = 84.0
+
+[node name="weight_input" type="SpinBox" parent="tile_set_editor/PanelContainer/VBoxContainer/HBoxContainer3/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 88.0
+offset_right = 83.0
+offset_bottom = 119.0
+size_flags_horizontal = 3
+max_value = 99999.0
+
+[node name="PanelContainer2" type="PanelContainer" parent="tile_set_editor"]
+layout_mode = 2
+offset_left = 154.0
+offset_right = 1152.0
+offset_bottom = 242.0
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="tile_set_editor/PanelContainer2"]
+layout_mode = 2
+anchors_preset = 0
+offset_right = 998.0
+offset_bottom = 242.0
+
+[node name="cursor" type="ColorRect" parent="tile_set_editor/PanelContainer2/Control"]
+unique_name_in_owner = true
+visible = false
+layout_direction = 1
+layout_mode = 0
+offset_right = 84.0
+offset_bottom = 84.0
+
+[node name="CenterContainer" type="CenterContainer" parent="tile_set_editor/PanelContainer2"]
+layout_mode = 2
+offset_right = 998.0
+offset_bottom = 242.0
+
+[node name="tile_set_list" type="GridContainer" parent="tile_set_editor/PanelContainer2/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 499.0
+offset_top = 121.0
+offset_right = 499.0
+offset_bottom = 121.0
+columns = 10
