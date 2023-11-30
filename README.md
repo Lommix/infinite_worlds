@@ -21,9 +21,33 @@ Each Pattern can only connect to other patterns with the same color rules on tha
 
 Here you can see the socket layer, which just consists of 2 different tiles from your tileset. Beware, if you have patterns that cannot connect to any other pattern, the algorithm will fail.
 
+## Installation
+
+To use in your project, just copy the addons/infinite_worlds folder into your project addons folder. Then activate the addon in the project settings.
+The rest of this repository is just a demo project, which you can use to play around with.
+
+## Usage
+
+-   Create a new Scene. Add a TileMap node to it.
+-   Add a new TileSet to the TileMap node.
+-   Start drawing some patterns on the TileMap. Each beeing equal in size.
+-   Select the TileMap node and click, open the Wfc Slicer in the bottom panel.
+-   Click on `Toggle Grid` to display the grid. Adjust the `pattern x & y` values to match the size of your patterns. `region x & y` determine the amount of patterns in the grid.
+-   Once all patterns are in place, click on `slice`. This will generate a ruleset from the patterns you drew.
+-   In the `Render Options` you can determine, which layers should later be rendered. For example the first layer, that determines the connectivity of the patterns, can be hidden.
+-   You can click on each Pattern and set a `Name` and a `Weight` (default 100). The weight determines the probability of the pattern beeing selected. The higher the weight, the more likely it will be selected.
+-   Once you are happy with the ruleset, right click the dropdown menu on the far right, and save the ruleset to a file.
+-   In your main scene, add a new `WfcTileMap` node. Add the ruleset you just saved to the `Wfc Tile Set` property.
+-   Set a Loading Radius and an Unstable Radius. The Loading Radius determines how many chunks are collapsed around the player. The Unstable Radius should be at least 2 and determines how many new unstable chunks are added around the player.
+-   The `Follow Path` is a node, most likely your player, the world is generated around.
+
+## How the loading works
+
+![loading](docs/loading.jpeg)
+
 ## Final Words
 
-This is a work in progress/demo addon and not production ready, there are bugs. I used this to generate the world in my [godot game](https://youtu.be/3B0e7ffAoKQ?t=48), but for reasons (Rust addict) I switched
+This is a work in progress/demo addon and not production ready, there are many bugs. I used this to generate the world in my [godot game](https://youtu.be/3B0e7ffAoKQ?t=48), but for reasons (Rust addict) I switched
 to the bevy game engine. Would be a shame to let this go to waste, so I decided to share it with you.
 
 I will not add any new features. If you want to contribute, feel free to do so. I'll do my best to help you out.
