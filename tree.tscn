@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0ope0oyjy3wi"]
+
+[ext_resource type="Texture2D" uid="uid://bg20v24b02sbj" path="res://example/tilemap_packed.png" id="1_pnbrn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="tree" type="Sprite2D" parent="."]
+position = Vector2(0, -11)
+texture = ExtResource("1_pnbrn")
+region_enabled = true
+region_rect = Rect2(530, 163, 12, 28)
