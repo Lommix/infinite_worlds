@@ -1,6 +1,6 @@
 # Infinite Worlds
 
-Godot addon for generating infinite growing terrain using Wave-Function-Collapse algorithm.
+Godot addon for generating infinite growing worlds using Wave-Function-Collapse algorithm.
 
 [demo.webm](https://github.com/Lommix/infinite_worlds/assets/84206502/b6d2381a-fa34-48ba-8079-87f886f27c6c)
 
@@ -11,6 +11,8 @@ Well this addon makes it possible. It uses the Wave-Function-Collapse algorithm 
 All you have to do, is draw some patterns on a reference tilemap and use the in-build editor tool to generate a wave function collapse ruleset from that.
 
 Then plug it into a special tilemap node, and you are good to go.
+
+All calculations happen on a different thread! Only the drawing part requires the main thread, which makes this pretty fast.
 
 ![editor](docs/editor.jpeg)
 
@@ -40,6 +42,21 @@ The rest of this repository is just a demo project, which you can use to play ar
 -   In your main scene, add a new `WfcTileMap` node. Add the ruleset you just saved to the `Wfc Tile Set` property.
 -   Set a Loading Radius and an Unstable Radius. The Loading Radius determines how many chunks are collapsed around the player. The Unstable Radius should be at least 2 and determines how many new unstable chunks are added around the player.
 -   The `Follow Path` is a node, most likely your player, the world is generated around.
+-   You can use the color groups to add a group to a pattern. I never used this, but it might be useful for you. You can access this in the signals for example.
+
+## Extend
+
+-   This addons adds some signals, you can subscribe to. For each pattern that is collapsed, a `pattern_collapsed` signal is emitted. You can use this to add some logic to your game. For example, spawn buildings, trees, or enemies. Check out the example project for more details.
+
+```gdscript
+## /addons/infinite_worlds/singletons/wfc_map_container.gd
+
+## called on contradiction, a cell has 0 possible outcomes [async]
+signal on_contradiction(cell: WfcCell)
+
+## called when drawing to tilemap [mainthread]
+signal on_cell_draw(cell: WfcCell)
+```
 
 ## How the loading works
 
